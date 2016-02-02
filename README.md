@@ -55,7 +55,7 @@ It currently supports opening a connection to a queue manager, opening a specifi
 	try {
 		$queueOpenResult = $client->openQueueOnQM($openParams);
 	} catch (QueueManagerConnectionFailedException $ex) {
-		die('Exception when opening queue: ' . $ex->getCode() . '$ex->getMessage());
+		die('Exception when opening queue: ' . $ex->getCode() . ' - ' . $ex->getMessage());
 	} catch (ExtensionNotLoadedException $ex) {
 		die('YOU MUST FIRST ENABLE THE mqseries PHP EXTENSION');
 	} catch (NoConnectionParametersException $ex) {
