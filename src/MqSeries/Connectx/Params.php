@@ -1,11 +1,23 @@
 <?php
 /**
- * MqSeries PHP Library
+ * php-mqseries
  *
- * @package	  MQSeries
- * @author    dieter <dieter.devlieghere@benelux.amadeus.com>
- * @copyright 2005 - 2016 Copyright (c) Amadeus Benelux NV
- * @link      http://www.amadeus.com/benelux/benelux.html
+ * Copyright 2015-2016 Amadeus Benelux NV
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package MqSeries
+ * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
 namespace MqSeries\Connectx;
@@ -17,9 +29,8 @@ namespace MqSeries\Connectx;
  *  
  *  AMQSSSLC -m QUEUEMANAGER -c CONNECTIONCHANNEL -x  SERVERIP\(SERVERPORT\) -k "PATHTOSSLKEYREPO" -s SSLCIPHER -o http://dummy.OCSP.responder
  *  
- * @package	MQSeries
- * @author  dieter <ddevlieghere@benelux.amadeus.com>
- * @link    http://www.amadeus.com/benelux/benelux.html
+ * @package	MqSeries\Connectx
+ * @author  dieter <dieter.devlieghere@benelux.amadeus.com>
  * @link http://publib.boulder.ibm.com/infocenter/wmqv7/v7r0/index.jsp?topic=%2Fcom.ibm.mq.csqzak.doc%2Ffr11670_.htm
  */
 class Params
