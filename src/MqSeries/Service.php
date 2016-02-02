@@ -284,7 +284,7 @@ class Service implements LoggerAwareInterface
 		}
 		
 		if (!($this->connectParams instanceof Connectx\Params)) {
-			throw new \RuntimeException("No connection parameters available");
+			throw new NoConnectionParametersException("No connection parameters available");
 		}
 		
 		mqseries_connx(
@@ -467,6 +467,17 @@ class Service implements LoggerAwareInterface
                 );
 
                 return $this->getMessageFromQueue($params);
+
+            } elseif ($this->getLastCompletionReasonCode() == 2033 &&
+                $this->getLastCompletionCode() == MQSERIES_MQCC_FAILED) {
+
+                //The queue is empty
+
+                throw new QueueIsEmptyException(
+                    $this->getLastCompletionReason(),
+                    $this->getLastCompletionReasonCode()
+                );
+
             } else {
                 return false;
             }
